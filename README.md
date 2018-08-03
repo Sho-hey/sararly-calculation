@@ -17,8 +17,6 @@
 |name|string|null: false, index: true|
 |assessment|integer||
 |position|string||
-|together|integer||
-|option|integer||
 |birthday|date||
 
 ### Association
