@@ -18,6 +18,7 @@
 |assessment|integer||
 |position|string||
 |birthday|date||
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -32,6 +33,7 @@
 |price|integer|null: false|
 |normal|integer|null: false|
 |special|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -43,6 +45,7 @@
 |------|----|------|
 |text|text||
 |price|integer||
+|user_id|references|null: false, foreign_key: true|
 
 ## Association
 - belongs_to :user
