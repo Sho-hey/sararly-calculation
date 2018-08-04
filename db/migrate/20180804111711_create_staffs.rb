@@ -4,7 +4,7 @@ class CreateStaffs < ActiveRecord::Migration[5.1]
       t.string :name,       null: false, index: true
       t.integer :assessment
       t.string :position
-      t.date :birthday
+      t.datetime :birthday
       t.timestamps
     end
   end
