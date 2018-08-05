@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :staffs, only: [:index]
   resources :users, only: [:index, :edit, :update]
+  resources :chanpagnes, only: [:index]
 end

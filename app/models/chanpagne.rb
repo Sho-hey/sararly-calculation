@@ -1,0 +1,2 @@
+class Chanpagne < ApplicationRecord
+end
