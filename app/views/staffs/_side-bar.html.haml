@@ -1,6 +1,8 @@
 .side-bar
   .side-bar__header
-    %h1 sample
+    %h1
+      = current_user.name
+    = link_to "編集", edit_user_path(current_user)
   .side-bar__menu
     %p sample
     %p sample
