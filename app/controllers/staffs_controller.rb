@@ -1,13 +1,14 @@
 class StaffsController < ApplicationController
   def index
+    @staffs = current_user.staffs
+  end
+
+  def new
     @staff = Staff.new
   end
 
-  def create
-  end
-
   private
-  def set_staff
-    @staff = Staff.find(params[])
+  def staffs_params
+    params.permit(:name, :assessment, :position, :birthday).merge(user_id: current_user.id)
   end
 end

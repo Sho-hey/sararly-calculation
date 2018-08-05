@@ -3,6 +3,7 @@
   .right-contents
     .right-contents__header
       %h1 staff list
+      = link_to "追加", new_user_staff_path(current_user)
     .right-contents__main.right-contents__main_staff
       .staff-header
         %p 名前
@@ -10,8 +11,5 @@
         %p 役職
         %p 誕生日
       #staffs-list
-        .staff
-          .staff-name.staff__about
-          .staff-assessment.staff__about
-          .staff-position.staff__about
-          .staff-birthday.staff__about
+        = render @staffs
+
