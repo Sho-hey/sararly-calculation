@@ -1,3 +1,15 @@
+## usersテーブル
+|Column|Type|Options|
+|------|----|------|
+|name|string|null: false|
+
+### Association
+- has_many :staffs
+- has_many :chanpagnes
+- has_many :others
+
+
+
 ## staffsテーブル
 
 |Column|Type|Options|
@@ -5,13 +17,11 @@
 |name|string|null: false, index: true|
 |assessment|integer||
 |position|string||
-|together|integer||
-|option|integer||
-|birthday|date||
+|birthday|datetime||
+|user_id|references|foreign_key: true|
 
 ### Association
-- has_many :champagnes, through: :staffs_champagnes
-- has_many :staffs_champagnes
+- belongs_to :user
 
 
 
@@ -20,34 +30,22 @@
 |Column|Type|Options|
 |------|----|------|
 |name|string|null: false, index: true|
-|number|integer|null: false|
+|price|integer|null: false|
+|normal|integer|null: false|
+|special|integer|null: false|
+|user_id|references|foreign_key: true|
 
 ### Association
-- has_many :staffs, through: :staffs_champagnes
-- has_many :staffs_champagnes
-- has_many :champagne_points
+- belongs_to :user
 
 
 
-## champagne_pointsテーブル
-
+## othersテーブル
 |Column|Type|Options|
 |------|----|------|
-|name|string|null: false|
-|point|integer|null: false|
+|text|text||
+|price|integer||
+|user_id|references|foreign_key: true|
 
-### Association
-- belongs_to: champagne
-
-
-
-## staffs_champagnesテーブル
-
-|Column|Type|Options|
-|------|----|------|
-|staff_id|references|:staff, foreign_key: true|
-|champagne_id|references|:champagne, foreign_key: true|
-
-### Association
-- belongs_to :staff
-- belongs_to :champagne
+## Association
+- belongs_to :user
