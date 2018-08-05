@@ -30,6 +30,10 @@
       height: calc(100vh - 100px);
       background-color: #d3d3d3;
       padding: 10px 20px;
+      &_yellow {
+        background-color: #ebd8c0;
+        color: white;
+      }
       .name-box {
         height: 30px;
         width: 500px;
