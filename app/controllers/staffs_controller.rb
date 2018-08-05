@@ -7,6 +7,11 @@ class StaffsController < ApplicationController
     @staff = Staff.new
   end
 
+  def create
+    Staff.create(staffs_params)
+    redirect_to user_staffs_path
+  end
+
   private
   def staffs_params
     params.permit(:name, :assessment, :position, :birthday).merge(user_id: current_user.id)
