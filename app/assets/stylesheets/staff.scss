@@ -1,0 +1,17 @@
+.staff-header {
+  height: 50px;
+  background-color: #dbdcf4;
+  p {
+    display: inline-block;
+    padding-right: 180px;
+  }
+}
+.staff{
+  &__about{
+    height: 50px;
+    width: 200px;
+    background-color: #000000;
+    display: inline-block;
+    margin-right: 30px;
+  }
+}
