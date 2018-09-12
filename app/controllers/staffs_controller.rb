@@ -1,6 +1,6 @@
 class StaffsController < ApplicationController
   def index
-    @staffs = current_user.staffs
+    @staffs = Staff.where(user_id: current_user.id)
   end
 
   def new
@@ -8,12 +8,12 @@ class StaffsController < ApplicationController
   end
 
   def create
-    Staff.create(staffs_params)
-    redirect_to user_staffs_path
+    @staff = Staff.create(staffs_params)
+    redirect_to user_staffs_path(current_user)
   end
 
   private
   def staffs_params
-    params.permit(:name, :assessment, :position, :birthday).merge(user_id: current_user.id)
+    params.require(:staff).permit(:name, :assessment, :position, :birthday).merge(user_id: current_user.id)
   end
 end

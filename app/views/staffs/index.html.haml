@@ -3,7 +3,7 @@
   .right-contents
     .right-contents__header
       %h1 staff list
-      = link_to "追加", new_user_staff_path(@staffs)
+      = link_to "追加", new_user_staff_path(user_id: current_user.id)
     .right-contents__main.right-contents__main_staff
       .staff-header
         %p 名前
