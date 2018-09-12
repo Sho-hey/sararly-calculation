@@ -4,7 +4,10 @@
       = current_user.name
     = link_to "編集", edit_user_path(current_user)
   .side-bar__menu
-    %p sample
-    %p sample
-    %p sample
+    %p
+      = link_to "P合計金額", calculations_path
+    %p
+      = link_to "スタッフ一覧", user_staffs_path(current_user)
+    %p
+      = link_to "シャンパン", chanpagnes_path
     %p sample

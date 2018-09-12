@@ -2,17 +2,14 @@
   = render 'side-bar'
   .right-contents
     .right-contents__header
-      %h1 sample
-    .right-contents__main
-      %h2 staff name
-      .name-box
-      %h2 chanpagne
-      .chanpagne-select
-        #chanpagne-list
-          = render 'chanpagne'
-      %h2 together
-      .name-box
-      %h2 option
-      .name-box
-      %h2 P合計金額
-      .name-box
+      %h1 staff list
+      = link_to "追加", new_user_staff_path(user_id: current_user.id)
+    .right-contents__main.right-contents__main_staff
+      .staff-header
+        %p 名前
+        %p 自己査定
+        %p 役職
+        %p 誕生日
+      #staffs-list
+        = render @staffs
+

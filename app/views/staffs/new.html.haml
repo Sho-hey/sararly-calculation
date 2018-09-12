@@ -1,0 +1,16 @@
+%h1 新規スタッフ
+-# form_for もう少しいい書き方できるはず
+= form_for @staff, url: { :controller => :staffs, :action => :create }do |f|
+  .staff-name-form
+    = f.label :name, "名前"
+    = f.text_field :name
+  .staff-assessment-form
+    = f.label :assessment, "査定"
+    = f.text_field :assessment
+  .staff-position-form
+    = f.label :position, "ポジション"
+    = f.select :position, [["レギュラー", "regular"], ["アルバイト", "part-time-job"], ["特別", "special"]], prompt: "選択してください"
+  .staff-birthday-form
+    = f.label :birthday, "誕生日"
+    = f.date_select :birthday, use_month_numbers: true, discard_year: true, prompt: "選択してください"
+  = f.submit "Send"

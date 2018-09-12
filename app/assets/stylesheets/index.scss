@@ -30,11 +30,19 @@
       height: calc(100vh - 100px);
       background-color: #d3d3d3;
       padding: 10px 20px;
+      &_chanpagne {
+        background-color: #ebd8c0;
+        color: white;
+      }
+      &_staff {
+        background-color: #dbdcf4;
+        color: white;
+        overflow: scroll;
+      }
       .name-box {
         height: 30px;
         width: 500px;
         display: inline-block;
-        background-color: #FFFFFF;
       }
       .chanpagne-select {
         height: 300px;
