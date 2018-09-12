@@ -4,8 +4,12 @@
     .right-contents__header
       %h1 sample
     .right-contents__main
-      %h2 staff name
       .name-box
+        %label{for: "staff"} スタッフを選択してください：
+        %select#staff{name: "staff"}
+          %option{selected: "selected", value: "exaple"} 選択してください
+          - @staffs.each do |staff|
+            %option{value: "#{staff.id}"} #{staff.name}
       %h2 chanpagne
       .chanpagne-select
         #chanpagne-list
